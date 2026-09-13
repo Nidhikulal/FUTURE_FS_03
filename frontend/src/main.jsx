@@ -87,15 +87,6 @@ function App() {
           </div>
         </section>
 
-        <section className="quick-strip">
-          <div className="container quick-grid">
-            <Quick icon={<UtensilsCrossed/>} title="Catering" text="Build your menu" onClick={() => setActiveTool("catering")} />
-            <Quick icon={<Sparkles/>} title="Decoration" text="Browse by occasion" onClick={() => scrollTo("decorations")} />
-            <Quick icon={<Lightbulb/>} title="Lighting" text="Choose a setup" onClick={() => setActiveTool("lighting")} />
-            <Quick icon={<Music2/>} title="DJ & Sound" text="Build your setup" onClick={() => setActiveTool("sound")} />
-          </div>
-        </section>
-
         <section id="services" className="section">
           <div className="container">
             <SectionHead eyebrow="SERVICES" title="Build your function, your way" text="Select one service or combine multiple services into a single booking request." />
@@ -196,10 +187,6 @@ function App() {
       {orderDone && <SuccessModal order={orderDone} onClose={() => { setOrderDone(null); setCart([]); }} />}
     </div>
   );
-}
-
-function Quick({icon,title,text,onClick}) {
-  return <button className="quick-card" onClick={onClick}><span className="quick-icon">{icon}</span><span><b>{title}</b><small>{text}</small></span><ChevronRight/></button>;
 }
 
 function ServiceCard({icon,title,tag,onClick}) {
@@ -310,7 +297,7 @@ function DecorationSection({catalog,addItem}) {
   return <section id="decorations" className="section decoration-section"><div className="container">
     <SectionHead eyebrow="DECORATION STUDIO" title="Find a decoration that fits your occasion" text="Choose the function to browse matching designs before booking." />
     <div className="filter-row"><div className="pill-row">{categories.map(x=><button key={x} className={category===x?"pill active":"pill"} onClick={()=>setCategory(x)}>{x}</button>)}</div></div>
-    <div className="decoration-grid">{results.map(d=><article className="dec-card" key={d.id}><div className="dec-image"><img src={d.image} alt={d.name}/></div><div className="dec-body"><div><small>{d.category}</small><h3>{d.name}</h3></div><strong>{money(d.price)}</strong></div><button className="outline full" onClick={()=>setSelected(d)}>View & Book <ChevronRight size={16}/></button></article>)}</div>
+    <div className="decoration-grid">{results.map(d=><article className="dec-card" key={d.id}><div className="dec-image"><img src={d.image} alt={d.name}/></div><div className="dec-body"><div><small>{d.category}</small></div><strong>{money(d.price)}</strong></div><button className="outline full" onClick={()=>setSelected(d)}>View & Book <ChevronRight size={16}/></button></article>)}</div>
     {results.length===0 && <div className="no-results">No designs for this occasion yet.</div>}
   </div>
   {selected && <DecorationBooking item={selected} addItem={addItem} onClose={()=>setSelected(null)}/>}
