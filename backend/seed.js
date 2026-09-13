@@ -58,15 +58,29 @@ const catalogData = {
       { id: "premium", name: "Premium Event Lighting", description: "Stage + ambience + highlight lighting", price: 7500 }
     ]
   },
-  decoration: [
-    { id: "dec1", category: "Wedding", range: "Premium", name: "Royal Floral Wedding Stage", price: 28000, image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80" },
-    { id: "dec2", category: "Wedding", range: "Standard", name: "Classic Floral Stage", price: 18000, image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" },
-    { id: "dec3", category: "Wedding", range: "Budget", name: "Elegant Minimal Stage", price: 12000, image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80" },
-    { id: "dec4", category: "Mehndi", range: "Premium", name: "Colorful Mehndi Garden", price: 22000, image: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80" },
-    { id: "dec5", category: "Mehndi", range: "Standard", name: "Boho Mehndi Setup", price: 14000, image: "https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1200&q=80" },
-    { id: "dec6", category: "Birthday", range: "Standard", name: "Birthday Balloon Stage", price: 9000, image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=80" },
-    { id: "dec7", category: "Reception", range: "Premium", name: "Grand Reception Stage", price: 30000, image: "https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1200&q=80" },
-    { id: "dec8", category: "Engagement", range: "Standard", name: "Pastel Engagement Decor", price: 16000, image: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=1200&q=80" }
+    decoration: [
+    { id: "wed1", category: "Wedding", range: "Premium", name: "Wedding Stage Design 1", price: 28000, image: "/images/decoration/wedding1.jpeg" },
+    { id: "wed2", category: "Wedding", range: "Standard", name: "Wedding Stage Design 2", price: 20000, image: "/images/decoration/wedding2.jpeg" },
+    { id: "wed3", category: "Wedding", range: "Standard", name: "Wedding Stage Design 3", price: 18000, image: "/images/decoration/wedding3.jpeg" },
+    { id: "wed4", category: "Wedding", range: "Budget", name: "Wedding Stage Design 4", price: 12000, image: "/images/decoration/wedding4.jpeg" },
+
+    { id: "meh1", category: "Mehndi", range: "Premium", name: "Mehndi Setup 1", price: 22000, image: "/images/decoration/mehendi1.jpeg" },
+    { id: "meh2", category: "Mehndi", range: "Standard", name: "Mehndi Setup 2", price: 16000, image: "/images/decoration/mehandi2.jpeg" },
+    { id: "meh3", category: "Mehndi", range: "Standard", name: "Mehndi Setup 3", price: 14000, image: "/images/decoration/mehandi3.jpeg" },
+    { id: "meh4", category: "Mehndi", range: "Budget", name: "Mehndi Setup 4", price: 9000, image: "/images/decoration/mehandi4.jpeg" },
+
+    { id: "bday1", category: "Birthday", range: "Premium", name: "Birthday Decor 1", price: 15000, image: "/images/decoration/brdy1.jpeg" },
+    { id: "bday2", category: "Birthday", range: "Standard", name: "Birthday Decor 2", price: 10000, image: "/images/decoration/brdy2.jpeg" },
+    { id: "bday3", category: "Birthday", range: "Standard", name: "Birthday Decor 3", price: 9000, image: "/images/decoration/brdy3.jpeg" },
+    { id: "bday4", category: "Birthday", range: "Budget", name: "Birthday Decor 4", price: 6000, image: "/images/decoration/brdy4.jpeg" },
+
+    { id: "recp1", category: "Reception", range: "Premium", name: "Reception Stage 1", price: 30000, image: "/images/decoration/rec1.jpeg" },
+    { id: "recp2", category: "Reception", range: "Standard", name: "Reception Stage 2", price: 20000, image: "/images/decoration/rec2.jpeg" },
+    { id: "recp3", category: "Reception", range: "Budget", name: "Reception Stage 3", price: 14000, image: "/images/decoration/rec3.jpeg" },
+
+    { id: "eng1", category: "Engagement", range: "Premium", name: "Engagement Decor 1", price: 18000, image: "/images/decoration/eng1.jpeg" },
+    { id: "eng2", category: "Engagement", range: "Standard", name: "Engagement Decor 2", price: 14000, image: "/images/decoration/eng2.jpeg" },
+    { id: "eng3", category: "Engagement", range: "Budget", name: "Engagement Decor 3", price: 10000, image: "/images/decoration/eng3.jpeg" }
   ]
 };
 

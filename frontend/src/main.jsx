@@ -126,8 +126,17 @@ function App() {
         <section id="gallery" className="section gallery-section">
           <div className="container">
             <SectionHead eyebrow="OUR WORK" title="Set the mood for your celebration" />
-            <div className="gallery">
-              {catalog.decoration.slice(0, 6).map((d, i) => <img key={d.id} src={d.image} alt={d.name} loading="lazy" className={`g${i+1}`} />)}
+                        <div className="gallery">
+              <img src="/images/gallery/photo1.jpeg" alt="Event photo 1" loading="lazy" className="g1" />
+              <img src="/images/gallery/photo2.webp" alt="Event photo 2" loading="lazy" className="g2" />
+              <img src="/images/gallery/photo3.jpg" alt="Event photo 3" loading="lazy" className="g3" />
+              <img src="/images/gallery/photo4.jpg" alt="Event photo 4" loading="lazy" className="g4" />
+              <img src="/images/gallery/photo5.jpeg" alt="Event photo 5" loading="lazy" className="g5" />
+              <img src="/images/gallery/photo6.jpeg" alt="Event photo 6" loading="lazy" className="g6" />
+              <img src="/images/gallery/photo7.jpg" alt="Event photo 7" loading="lazy" className="g7" />
+              <img src="/images/gallery/photo8.jpg" alt="Event photo 8" loading="lazy" className="g8" />
+
+
             </div>
           </div>
         </section>
