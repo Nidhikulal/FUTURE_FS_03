@@ -7,23 +7,34 @@ import Catalog from "./models/Catalog.js";
 const catalogData = {
   catering: {
     "South Indian Breakfast": [
-      { id: "idli-vada", name: "Idli & Vada", unit: "person", price: 90 },
-      { id: "dosa", name: "Dosa", unit: "person", price: 110 },
-      { id: "poori", name: "Poori Masala", unit: "person", price: 100 },
-      { id: "coffee", name: "Tea / Coffee", unit: "person", price: 35 }
+      { id: "idli-vada", name: "Idli & Vada", unit: "person", price: 90, veg: true },
+      { id: "dosa", name: "Dosa", unit: "person", price: 110, veg: true },
+      { id: "poori", name: "Poori Masala", unit: "person", price: 100, veg: true },
+      { id: "upma", name: "Upma", unit: "person", price: 80, veg: true },
+      { id: "coffee", name: "Tea / Coffee", unit: "person", price: 35, veg: true }
     ],
     "Lunch & Dinner": [
-      { id: "veg-meal", name: "Traditional Veg Meal", unit: "person", price: 220 },
-      { id: "special-meal", name: "Special Veg Meal", unit: "person", price: 320 },
-      { id: "paneer", name: "Paneer Curry", unit: "person", price: 80 },
-      { id: "chicken", name: "Chicken Main Course", unit: "person", price: 130 },
-      { id: "fish", name: "Fish Main Course", unit: "person", price: 160 },
-      { id: "dessert", name: "Dessert", unit: "person", price: 60 }
+      { id: "veg-meal", name: "Traditional Veg Meal", unit: "person", price: 220, veg: true },
+      { id: "special-meal", name: "Special Veg Meal", unit: "person", price: 320, veg: true },
+      { id: "paneer", name: "Paneer Curry", unit: "person", price: 80, veg: true },
+      { id: "veg-biryani", name: "Veg Biryani", unit: "person", price: 150, veg: true },
+      { id: "dal-tadka", name: "Dal Tadka", unit: "person", price: 70, veg: true },
+      { id: "raita", name: "Raita", unit: "person", price: 40, veg: true },
+      { id: "papad", name: "Papad", unit: "person", price: 20, veg: true },
+      { id: "chicken", name: "Chicken Main Course", unit: "person", price: 130, veg: false },
+      { id: "chicken-biryani", name: "Chicken Biryani", unit: "person", price: 180, veg: false },
+      { id: "mutton-curry", name: "Mutton Curry", unit: "person", price: 220, veg: false },
+      { id: "egg-curry", name: "Egg Curry", unit: "person", price: 90, veg: false },
+      { id: "fish", name: "Fish Main Course", unit: "person", price: 160, veg: false },
+      { id: "dessert", name: "Dessert", unit: "person", price: 60, veg: true }
     ],
     "Extras": [
-      { id: "welcome-drink", name: "Welcome Drink", unit: "person", price: 45 },
-      { id: "ice-cream", name: "Ice Cream", unit: "person", price: 55 },
-      { id: "sweet", name: "Sweet", unit: "person", price: 35 }
+      { id: "welcome-drink", name: "Welcome Drink", unit: "person", price: 45, veg: true },
+      { id: "mocktail", name: "Mocktail", unit: "person", price: 65, veg: true },
+      { id: "ice-cream", name: "Ice Cream", unit: "person", price: 55, veg: true },
+      { id: "gulab-jamun", name: "Gulab Jamun", unit: "person", price: 40, veg: true },
+      { id: "salad", name: "Fresh Salad", unit: "person", price: 30, veg: true },
+      { id: "sweet", name: "Sweet", unit: "person", price: 35, veg: true }
     ]
   },
   djSound: {

@@ -55,7 +55,7 @@ function App() {
       <header className="nav">
         <div className="container nav-inner">
           <button className="brand" onClick={() => scrollTo("home")}>
-            <span className="brand-mark">P</span>
+            <img src="/logo.png" alt="Pooja Arrangers logo" className="brand-mark" />
             <span><b>POOJA</b><small>ARRANGERS & CATERERS</small></span>
           </button>
           <button className="menu-btn" onClick={() => setMobileMenu(v => !v)}>{mobileMenu ? <X /> : <Menu />}</button>
@@ -100,10 +100,10 @@ function App() {
           <div className="container">
             <SectionHead eyebrow="SERVICES" title="Build your function, your way" text="Select one service or combine multiple services into a single booking request." />
             <div className="service-grid">
-              <ServiceCard icon={<UtensilsCrossed/>} title="Catering" text="Choose dishes, set guest count and get a live food estimate." tag="Most Popular" onClick={() => setActiveTool("catering")} />
-              <ServiceCard icon={<Sparkles/>} title="Stage & Event Decoration" text="Select your occasion and budget range to discover matching designs." onClick={() => scrollTo("decorations")} />
-              <ServiceCard icon={<Lightbulb/>} title="Lighting" text="Pick a lighting package and add it to your event plan." onClick={() => setActiveTool("lighting")} />
-              <ServiceCard icon={<Headphones/>} title="DJ & Sound" text="Choose sound level, number of boxes, microphones and extras." onClick={() => setActiveTool("sound")} />
+              <ServiceCard icon={<UtensilsCrossed/>} title="Catering" onClick={() => setActiveTool("catering")} />
+              <ServiceCard icon={<Sparkles/>} title="Stage & Event Decoration" onClick={() => scrollTo("decorations")} />
+              <ServiceCard icon={<Lightbulb/>} title="Lighting" onClick={() => setActiveTool("lighting")} />
+              <ServiceCard icon={<Headphones/>} title="DJ & Sound" onClick={() => setActiveTool("sound")} />
             </div>
           </div>
         </section>
@@ -112,8 +112,8 @@ function App() {
           <div className="container feature-layout">
             <div>
               <div className="eyebrow dark">SIMPLE BOOKING</div>
-              <h2>Know what you need? <span>Build it online.</span></h2>
-              <p>No back-and-forth just to explain your requirements. Select your services, enter your event details and review an estimated total before sending the enquiry.</p>
+              <h2 className="feature-heading">Plan Your Perfect Celebration</h2>
+              <p>Choose the services you need for your special day, from catering and decoration to lighting and DJ sound. Share your event details with us and book your complete event arrangements easily.</p>
               <div className="steps">
                 <Step n="01" title="Choose services" text="Catering, decoration, lighting or sound." />
                 <Step n="02" title="Customize" text="Select items, quantities, occasion and package." />
@@ -146,7 +146,6 @@ function App() {
             <div className="testimonial">
               <div className="stars">{[1,2,3,4,5].map(x => <Star key={x} fill="currentColor" size={17}/>)}</div>
               <h2>“One team for the food, decor, lighting and sound makes event planning much easier.”</h2>
-              <p>Customer feedback section — replace with verified testimonials from actual clients.</p>
             </div>
           </div>
         </section>
@@ -167,14 +166,29 @@ function App() {
       </main>
 
       <footer>
-        <div className="container footer-inner">
-          <div><b>POOJA ARRANGERS & CATERERS</b><p>Complete event arrangements for your special occasions.</p></div>
-          <div className="footer-contact"><span><Phone size={15}/> +91 90000 00000</span><span><MapPin size={15}/> Mangaluru, Karnataka</span></div>
-        </div>
-      </footer>
+  <div className="container footer-inner">
+    <div>
+      <b>POOJA ARRANGERS & CATERERS</b>
+      <p>Complete event arrangements for your special occasions.</p>
+      <div className="footer-map">
+        <iframe
+          title="Our Location"
+          src="https://www.google.com/maps?q=Pooja+Arrangers+Pakshikere+Rd+Koluvailu+Haleangadi+Karnataka+574146&output=embed"
+          width="260"
+          height="160"
+          style={{ border: 0, marginTop: "14px", borderRadius: "4px" }}
+          allowFullScreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+    <div className="footer-contact"><span><Phone size={15}/> +91 90000 00000</span><span><MapPin size={15}/> Haleyangady, Mangaluru, Karnataka 574146</span></div>
+  </div>
+</footer>
 
-      <button className="floating-plan" onClick={() => setActiveTool("checkout")}><ShoppingBag size={19}/><span>{cart.length} items</span><b>{money(total)}</b></button>
-
+{cart.length > 0 && (
+  <button className="floating-plan" onClick={() => setActiveTool("checkout")}><ShoppingBag size={19}/><span>{cart.length} items</span><b>{money(total)}</b></button>
+)}
       {activeTool === "catering" && <CateringModal catalog={catalog} addItem={addItem} onClose={() => setActiveTool(null)} />}
       {activeTool === "sound" && <SoundModal catalog={catalog} addItem={addItem} onClose={() => setActiveTool(null)} />}
       {activeTool === "lighting" && <LightingModal catalog={catalog} addItem={addItem} onClose={() => setActiveTool(null)} />}
@@ -188,8 +202,8 @@ function Quick({icon,title,text,onClick}) {
   return <button className="quick-card" onClick={onClick}><span className="quick-icon">{icon}</span><span><b>{title}</b><small>{text}</small></span><ChevronRight/></button>;
 }
 
-function ServiceCard({icon,title,text,tag,onClick}) {
-  return <button className="service-card" onClick={onClick}><span className="service-icon">{icon}</span>{tag && <span className="tag">{tag}</span>}<h3>{title}</h3><p>{text}</p><span className="learn">Configure <ArrowRight size={15}/></span></button>;
+function ServiceCard({icon,title,tag,onClick}) {
+  return <button className="service-card" onClick={onClick}><span className="service-icon">{icon}</span>{tag && <span className="tag">{tag}</span>}<h3>{title}</h3><span className="learn">Configure <ArrowRight size={15}/></span></button>;
 }
 
 function SectionHead({eyebrow,title,text}) {
@@ -223,8 +237,28 @@ function CateringModal({catalog,addItem,onClose}) {
       <div className="counter"><button onClick={()=>setPeople(Math.max(10,people-10))}><Minus/></button><strong>{people}</strong><span>people</span><button onClick={()=>setPeople(people+10)}><Plus/></button></div>
     </div>
     <p className="hint">Select the dishes you want. Prices are calculated per person.</p>
-    <div className="menu-groups">
-      {Object.entries(catalog.catering).map(([group,items]) => <div key={group}><h4>{group}</h4><div className="option-list">{items.map(item => <label className={`check-option ${selected[item.id]?"selected":""}`} key={item.id}><input type="checkbox" checked={!!selected[item.id]} onChange={()=>toggle(item)}/><span><b>{item.name}</b><small>{money(item.price)} / person</small></span><strong>{money(item.price*people)}</strong></label>)}</div></div>)}
+        <div className="menu-groups">
+      {Object.entries(catalog.catering).map(([group,items]) => {
+        const hasNonVeg = items.some(i => i.veg === false);
+        const vegItems = hasNonVeg ? items.filter(i => i.veg !== false) : items;
+        const nonVegItems = hasNonVeg ? items.filter(i => i.veg === false) : [];
+        const renderItem = item => <label className={`check-option ${selected[item.id]?"selected":""}`} key={item.id}><input type="checkbox" checked={!!selected[item.id]} onChange={()=>toggle(item)}/><span><b><span className={`veg-dot ${item.veg===false?"nonveg":""}`}></span>{item.name}</b><small>{money(item.price)} / person</small></span><strong>{money(item.price*people)}</strong></label>;
+        return (
+          <div key={group}>
+            <h4>{group}</h4>
+            {hasNonVeg ? (
+              <>
+                <h5 className="submenu-head">Veg</h5>
+                <div className="option-list">{vegItems.map(renderItem)}</div>
+                <h5 className="submenu-head nonveg">Non-Veg</h5>
+                <div className="option-list">{nonVegItems.map(renderItem)}</div>
+              </>
+            ) : (
+              <div className="option-list">{vegItems.map(renderItem)}</div>
+            )}
+          </div>
+        );
+      })}
     </div>
     <div className="modal-bottom"><div><small>Estimated catering</small><strong>{money(subtotal)}</strong></div><button className="primary" disabled={!chosen.length} onClick={add}>Add Catering <Plus size={17}/></button></div>
   </Modal>;
@@ -326,12 +360,12 @@ function CheckoutModal({cart,total,removeItem,setOrderDone,onClose}) {
       <div className="checkout-total"><span>Estimated total</span><strong>{money(total)}</strong></div>
       <h4>Your details</h4>
       <div className="input-grid">
-        <label>Name<input name="name" required value={form.name} onChange={update} placeholder="Your name"/></label>
-        <label>Phone<input name="phone" required value={form.phone} onChange={update} placeholder="10-digit number"/></label>
-        <label>Email (optional)<input name="email" type="email" value={form.email} onChange={update} placeholder="you@example.com"/></label>
+        <label>Name<input name="name" required value={form.name} onChange={update} /></label>
+        <label>Phone<input name="phone" required value={form.phone} onChange={update} /></label>
+        <label>Email (optional)<input name="email" type="email" value={form.email} onChange={update} /></label>
         <label>Event date<input name="date" required type="date" value={form.date} onChange={update}/></label>
-        <label>Expected guests<input name="guests" type="number" value={form.guests} onChange={update} placeholder="e.g. 300"/></label>
-        <label>Venue / location<input name="venue" value={form.venue} onChange={update} placeholder="Function hall / area"/></label>
+        <label>Expected guests<input name="guests" type="number" value={form.guests} onChange={update} /></label>
+        <label>Venue / location<input name="venue" value={form.venue} onChange={update} /></label>
         <label className="wide">Additional requirements<textarea name="notes" value={form.notes} onChange={update} placeholder="Tell us anything else we should know..."/></label>
       </div>
       <button className="primary full submit-btn" disabled={sending}>{sending ? "Sending..." : "Send Booking Request"} <ArrowRight size={17}/></button>
