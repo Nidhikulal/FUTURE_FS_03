@@ -182,7 +182,7 @@ function App() {
         ></iframe>
       </div>
     </div>
-    <div className="footer-contact"><span><Phone size={15}/> +91 8904551379</span><span><MapPin size={15}/> Haleyangady, Mangaluru, Karnataka 574146</span></div>
+    <div className="footer-contact"><span><Phone size={15}/> +91 8952957819</span><span><MapPin size={15}/> Haleyangady, Mangaluru, Karnataka 574146</span></div>
   </div>
 </footer>
 
