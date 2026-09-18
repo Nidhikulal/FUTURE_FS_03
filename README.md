@@ -145,9 +145,4 @@ This project deploys as **two services inside one Vercel project** — a Vite fr
 
 ---
 
-## Notes
 
-- **Never commit `.env`** — it contains live database credentials. Confirm it's listed in `.gitignore`.
-- To change menu items, prices, DJ/lighting packages, or decoration designs, edit the `catalogData` object in `backend/seed.js` and re-run `node seed.js` to push the update into MongoDB.
-- Decoration and gallery photos live in `frontend/public/images/` — replace or add files there and update the matching paths in `seed.js` (decoration) or `main.jsx` (gallery).
-- Double-check the business phone number and address shown in the footer/contact sections are accurate before going live.
