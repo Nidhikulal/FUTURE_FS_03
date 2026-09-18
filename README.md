@@ -4,7 +4,7 @@ A full-stack event booking website for a catering, decoration, lighting and DJ/s
 
 Customers can browse services, build a custom event package (catering menu, DJ/sound setup, lighting, decoration design), see a live price estimate, and submit a booking request — all saved to a cloud database.
 
-**Live site:**https://future-fs-03-j29j.vercel.app/
+Live site:https://future-fs-03-j29j.vercel.app/
 ---
 
 ## Features
